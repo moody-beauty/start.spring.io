@@ -152,11 +152,11 @@ describe('parseParams', () => {
         platformVersion: get(defaultValues, 'boot'),
         packaging: 'war',
         jvmVersion: '11',
-        groupId: 'com.example2',
+        groupId: 'com.moodybeauty2',
         artifactId: 'demo2',
         name: 'demo2',
         description: 'Demo project for Spring Boot2',
-        packageName: 'com.example2.demo2',
+        packageName: 'com.moodybeauty2.demo2',
         dependencies: ' devtools , lombok ',
       },
       listsValues
@@ -169,13 +169,13 @@ describe('parseParams', () => {
     expect(get(result, 'values.boot')).toBe(get(defaultValues, 'boot'))
     expect(get(result, 'values.meta.packaging')).toBe('war')
     expect(get(result, 'values.meta.java')).toBe('11')
-    expect(get(result, 'values.meta.group')).toBe('com.example2')
+    expect(get(result, 'values.meta.group')).toBe('com.moodybeauty2')
     expect(get(result, 'values.meta.artifact')).toBe('demo2')
     expect(get(result, 'values.meta.name')).toBe('demo2')
     expect(get(result, 'values.meta.description')).toBe(
       'Demo project for Spring Boot2'
     )
-    expect(get(result, 'values.meta.packageName')).toBe('com.example2.demo2')
+    expect(get(result, 'values.meta.packageName')).toBe('com.moodybeauty2.demo2')
     expect(get(result, 'values.dependencies').length).toBe(2)
   })
 
@@ -236,11 +236,11 @@ describe('parseParams', () => {
         platformVersion: '1.1.1',
         packaging: 'war',
         jvmVersion: '11',
-        groupId: 'com.example2',
+        groupId: 'com.moodybeauty2',
         artifactId: 'demo2',
         name: 'demo2',
         description: 'Demo project for Spring Boot2',
-        packageName: 'com.example2.demo2',
+        packageName: 'com.moodybeauty2.demo2',
         dependencies: ' devtools , lombok ',
       },
       listsValues
@@ -253,13 +253,13 @@ describe('parseParams', () => {
     expect(get(result, 'values.boot')).toBe(get(defaultValues, 'boot'))
     expect(get(result, 'values.meta.packaging')).toBe('war')
     expect(get(result, 'values.meta.java')).toBe('11')
-    expect(get(result, 'values.meta.group')).toBe('com.example2')
+    expect(get(result, 'values.meta.group')).toBe('com.moodybeauty2')
     expect(get(result, 'values.meta.artifact')).toBe('demo2')
     expect(get(result, 'values.meta.name')).toBe('demo2')
     expect(get(result, 'values.meta.description')).toBe(
       'Demo project for Spring Boot2'
     )
-    expect(get(result, 'values.meta.packageName')).toBe('com.example2.demo2')
+    expect(get(result, 'values.meta.packageName')).toBe('com.moodybeauty2.demo2')
     expect(get(result, 'values.dependencies').length).toBe(2)
     expect(get(result, 'errors.boot.value')).toBe('1.1.1')
   })

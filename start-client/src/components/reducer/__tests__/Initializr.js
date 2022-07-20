@@ -112,15 +112,15 @@ describe('UPDATE action', () => {
       type: 'UPDATE',
       payload: {
         meta: {
-          group: 'com.example1',
+          group: 'com.moodybeauty1',
         },
       },
     })
-    expect(get(result, 'values.meta.group')).toBe('com.example1')
-    expect(get(result, 'values.meta.packageName')).toBe('com.example1.demo3')
+    expect(get(result, 'values.meta.group')).toBe('com.moodybeauty1')
+    expect(get(result, 'values.meta.packageName')).toBe('com.moodybeauty1.demo3')
   })
   it('should reduce the state (meta artifact)', () => {
-    state.values.meta.group = 'com.example3'
+    state.values.meta.group = 'com.moodybeauty3'
     const result = reducer(state, {
       type: 'UPDATE',
       payload: {
@@ -130,11 +130,11 @@ describe('UPDATE action', () => {
       },
     })
     expect(get(result, 'values.meta.artifact')).toBe('demo2')
-    expect(get(result, 'values.meta.packageName')).toBe('com.example3.demo2')
+    expect(get(result, 'values.meta.packageName')).toBe('com.moodybeauty3.demo2')
   })
 
   it('should reduce the state (meta artifact, empty value)', () => {
-    state.values.meta.group = 'com.example3'
+    state.values.meta.group = 'com.moodybeauty3'
     let result = reducer(state, {
       type: 'UPDATE',
       payload: {
@@ -145,7 +145,7 @@ describe('UPDATE action', () => {
     })
     expect(get(result, 'values.meta.artifact')).toBe('')
     expect(get(result, 'values.meta.name')).toBe('')
-    expect(get(result, 'values.meta.packageName')).toBe('com.example3.')
+    expect(get(result, 'values.meta.packageName')).toBe('com.moodybeauty3.')
     result = reducer(result, {
       type: 'UPDATE',
       payload: {
@@ -156,7 +156,7 @@ describe('UPDATE action', () => {
     })
     expect(get(result, 'values.meta.artifact')).toBe('')
     expect(get(result, 'values.meta.name')).toBe('demo')
-    expect(get(result, 'values.meta.packageName')).toBe('com.example3.')
+    expect(get(result, 'values.meta.packageName')).toBe('com.moodybeauty3.')
   })
 
   it('should reduce the state (meta description)', () => {
@@ -215,11 +215,11 @@ describe('LOAD action', () => {
         params: {
           artifactId: 'demo1',
           description: 'Demo1 project for Spring Boot',
-          groupId: 'com.example1',
+          groupId: 'com.moodybeauty1',
           jvmVersion: '1.8',
           language: 'java',
           name: 'demo1',
-          packageName: 'com.example1.demo1',
+          packageName: 'com.moodybeauty1.demo1',
           packaging: 'war',
           platformVersion: '2.2.0.RELEASE',
           type: 'gradle-project',
@@ -231,13 +231,13 @@ describe('LOAD action', () => {
     expect(get(result, 'values.language')).toBe('java')
     expect(get(result, 'values.boot')).toBe('2.2.0.RELEASE')
     expect(get(result, 'values.meta.name')).toBe('demo1')
-    expect(get(result, 'values.meta.group')).toBe('com.example1')
+    expect(get(result, 'values.meta.group')).toBe('com.moodybeauty1')
     expect(get(result, 'values.meta.artifact')).toBe('demo1')
     expect(get(result, 'values.meta.description')).toBe(
       'Demo1 project for Spring Boot'
     )
     expect(get(result, 'values.meta.packaging')).toBe('war')
-    expect(get(result, 'values.meta.packageName')).toBe('com.example1.demo1')
+    expect(get(result, 'values.meta.packageName')).toBe('com.moodybeauty1.demo1')
     expect(get(result, 'values.meta.java')).toBe('1.8')
     expect(get(result, 'values.dependencies').length).toBe(0)
     expect(Object.keys(get(result, 'errors')).length).toBe(0)
