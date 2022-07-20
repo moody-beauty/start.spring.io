@@ -23,7 +23,7 @@ but other options are available:
 [[getting-started]]
 == Getting Started
 Let's create a project and discover the various options that you can use to tune it.
-Go to https://start.spring.io, change the `Group` field from "com.example" to "org.acme"
+Go to https://start.spring.io, change the `Group` field from "com.moodybeauty" to "org.acme"
 and click on "Add Dependencies". This opens a pop-up where you can search for dependencies
 to add. If you type "web", you will see a list of matching choices with that simple
 criteria. Use the mouse or the arrow keys and `Enter` to select the "Spring Web" starter.
@@ -157,7 +157,7 @@ https://start.spring.io/#!groupId=org.acme.test
 ----
 
 If you copy/paste the link above in your browser, you'll end up on start.spring.io with
-the usual UI except that the `Group` field is not equal to the usual `com.example`
+the usual UI except that the `Group` field is not equal to the usual `com.moodybeauty`
 default.
 
 NOTE: Any value that is not specified in the link will use whatever default is applicable

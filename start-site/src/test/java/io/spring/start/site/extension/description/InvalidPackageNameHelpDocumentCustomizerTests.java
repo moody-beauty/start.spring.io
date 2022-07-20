@@ -37,7 +37,7 @@ class InvalidPackageNameHelpDocumentCustomizerTests extends AbstractExtensionTes
 
 	@Test
 	void warningNotAddedWithValidPackageName() {
-		assertHelpDocument("com.example.valid").doesNotContain("# Read Me First");
+		assertHelpDocument("com.moodybeauty.valid").doesNotContain("# Read Me First");
 	}
 
 	private TextAssert assertHelpDocument(String packageName) {

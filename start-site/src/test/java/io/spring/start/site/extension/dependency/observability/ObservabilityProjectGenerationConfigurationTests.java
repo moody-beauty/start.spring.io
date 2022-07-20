@@ -38,7 +38,7 @@ class ObservabilityProjectGenerationConfigurationTests extends AbstractExtension
 		ProjectRequest request = createProjectRequest("wavefront");
 		request.setBootVersion("2.6.8");
 		ProjectStructure project = generateProject(request);
-		assertThat(project).asJvmModule(new JavaLanguage()).testSource("com.example.demo", "DemoApplicationTests")
+		assertThat(project).asJvmModule(new JavaLanguage()).testSource("com.moodybeauty.demo", "DemoApplicationTests")
 				.contains("import " + TestPropertySource.class.getName())
 				.contains("@TestPropertySource(properties = \"management.metrics.export.wavefront.enabled=false\")");
 	}
@@ -47,7 +47,7 @@ class ObservabilityProjectGenerationConfigurationTests extends AbstractExtension
 	void testClassWithoutWavefrontDoesNotDisableMetricsExport() {
 		ProjectRequest request = createProjectRequest("datadog");
 		ProjectStructure project = generateProject(request);
-		assertThat(project).asJvmModule(new JavaLanguage()).testSource("com.example.demo", "DemoApplicationTests")
+		assertThat(project).asJvmModule(new JavaLanguage()).testSource("com.moodybeauty.demo", "DemoApplicationTests")
 				.doesNotContain("import " + TestPropertySource.class.getName()).doesNotContain(
 						"@TestPropertySource(properties = \"management.metrics.export.wavefront.enabled=false\")");
 	}

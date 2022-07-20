@@ -37,7 +37,7 @@ class SpringNativeRepositoryBuildCustomizerTests {
 	void mavenRepositoryIsRegisteredWhenMavenRepositoryIsSet() {
 		MavenBuild build = new MavenBuild();
 		build.dependencies().add("native",
-				Dependency.withCoordinates("com.example", "native").version(VersionReference.ofValue("2.0.0")));
+				Dependency.withCoordinates("com.moodybeauty", "native").version(VersionReference.ofValue("2.0.0")));
 		MavenRepository testRepository = MavenRepository.withIdAndUrl("test", "https://repo.example.com")
 				.name("Test repo").build();
 		new SpringNativeRepositoryBuildCustomizer(testRepository).customize(build);
@@ -55,7 +55,7 @@ class SpringNativeRepositoryBuildCustomizerTests {
 	void mavenRepositoryIsNotRegisteredWhenMavenRepositoryIsNull() {
 		MavenBuild build = new MavenBuild();
 		build.dependencies().add("native",
-				Dependency.withCoordinates("com.example", "native").version(VersionReference.ofValue("2.0.0")));
+				Dependency.withCoordinates("com.moodybeauty", "native").version(VersionReference.ofValue("2.0.0")));
 		new SpringNativeRepositoryBuildCustomizer(null).customize(build);
 		assertThat(build.repositories().isEmpty()).isTrue();
 		assertThat(build.pluginRepositories().isEmpty()).isTrue();

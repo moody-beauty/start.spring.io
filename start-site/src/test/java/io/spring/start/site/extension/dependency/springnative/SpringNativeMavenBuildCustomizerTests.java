@@ -41,7 +41,7 @@ class SpringNativeMavenBuildCustomizerTests {
 	void versionPropertyIsSetOnDependency() {
 		MavenBuild build = new MavenBuild();
 		build.dependencies().add("native",
-				Dependency.withCoordinates("com.example", "native").version(VersionReference.ofValue("2.0.0")));
+				Dependency.withCoordinates("com.moodybeauty", "native").version(VersionReference.ofValue("2.0.0")));
 		customize(build);
 		assertThat(build.properties().versions(VersionProperty::toStandardFormat)).singleElement()
 				.satisfies((entry) -> {
@@ -56,7 +56,7 @@ class SpringNativeMavenBuildCustomizerTests {
 	void nativeProfileNotAddedBefore010() {
 		MavenBuild build = new MavenBuild();
 		build.dependencies().add("native",
-				Dependency.withCoordinates("com.example", "native").version(VersionReference.ofValue("0.9.2")));
+				Dependency.withCoordinates("com.moodybeauty", "native").version(VersionReference.ofValue("0.9.2")));
 		customize(build);
 		assertThat(build.profiles().ids()).doesNotContain("native");
 	}
@@ -65,7 +65,7 @@ class SpringNativeMavenBuildCustomizerTests {
 	void repackageClassifierPropertyNotAddedBefore010() {
 		MavenBuild build = new MavenBuild();
 		build.dependencies().add("native",
-				Dependency.withCoordinates("com.example", "native").version(VersionReference.ofValue("0.9.2")));
+				Dependency.withCoordinates("com.moodybeauty", "native").version(VersionReference.ofValue("0.9.2")));
 		customize(build);
 		assertThat(build.properties().has("repackage.classifier")).isFalse();
 	}
@@ -74,7 +74,7 @@ class SpringNativeMavenBuildCustomizerTests {
 	void repackageClassifierPropertyAddedAsOf010() {
 		MavenBuild build = new MavenBuild();
 		build.dependencies().add("native",
-				Dependency.withCoordinates("com.example", "native").version(VersionReference.ofValue("0.10.3")));
+				Dependency.withCoordinates("com.moodybeauty", "native").version(VersionReference.ofValue("0.10.3")));
 		customize(build);
 		assertThat(build.properties().values().filter((entry) -> entry.getKey().equals("repackage.classifier")))
 				.singleElement().satisfies((entry) -> assertThat(entry.getValue()).isEqualTo(""));
@@ -84,7 +84,7 @@ class SpringNativeMavenBuildCustomizerTests {
 	void native10HasAotPluginConfigurationWithBuildAndTestTasks() {
 		MavenBuild build = new MavenBuild();
 		build.dependencies().add("native",
-				Dependency.withCoordinates("com.example", "native").version(VersionReference.ofValue("0.10.3")));
+				Dependency.withCoordinates("com.moodybeauty", "native").version(VersionReference.ofValue("0.10.3")));
 		customize(build);
 		assertThat(build.plugins().values()
 				.filter((plugin) -> plugin.getGroupId().equals("org.springframework.experimental")
@@ -104,7 +104,7 @@ class SpringNativeMavenBuildCustomizerTests {
 	void native11HasAotPluginConfigurationWithBuildTaskOnly() {
 		MavenBuild build = new MavenBuild();
 		build.dependencies().add("native",
-				Dependency.withCoordinates("com.example", "native").version(VersionReference.ofValue("0.11.0-M1")));
+				Dependency.withCoordinates("com.moodybeauty", "native").version(VersionReference.ofValue("0.11.0-M1")));
 		customize(build);
 		assertThat(build.plugins().values()
 				.filter((plugin) -> plugin.getGroupId().equals("org.springframework.experimental")
@@ -120,7 +120,7 @@ class SpringNativeMavenBuildCustomizerTests {
 	void nativeProfileHasRepackageClassifierProperty() {
 		MavenBuild build = new MavenBuild();
 		build.dependencies().add("native",
-				Dependency.withCoordinates("com.example", "native").version(VersionReference.ofValue("0.10.0")));
+				Dependency.withCoordinates("com.moodybeauty", "native").version(VersionReference.ofValue("0.10.0")));
 		assertThat(build).satisfies(hasNativeProfile((profile) -> assertThat(
 				profile.properties().values().filter((entry) -> entry.getKey().equals("repackage.classifier")))
 						.singleElement().satisfies((entry) -> assertThat(entry.getValue()).isEqualTo("exec"))));
@@ -130,7 +130,7 @@ class SpringNativeMavenBuildCustomizerTests {
 	void nativeProfileHasBuildToolsProperty() {
 		MavenBuild build = new MavenBuild();
 		build.dependencies().add("native",
-				Dependency.withCoordinates("com.example", "native").version(VersionReference.ofValue("0.10.3")));
+				Dependency.withCoordinates("com.moodybeauty", "native").version(VersionReference.ofValue("0.10.3")));
 		assertThat(build).satisfies(hasNativeProfile(
 				(profile) -> assertThat(profile.properties().versions(VersionProperty::toStandardFormat)
 						.filter((entry) -> entry.getKey().equals("native-buildtools.version"))).singleElement()
@@ -141,7 +141,7 @@ class SpringNativeMavenBuildCustomizerTests {
 	void native10ProfileHasDependencyToJunitPlatformNative() {
 		MavenBuild build = new MavenBuild();
 		build.dependencies().add("native",
-				Dependency.withCoordinates("com.example", "native").version(VersionReference.ofValue("0.10.3")));
+				Dependency.withCoordinates("com.moodybeauty", "native").version(VersionReference.ofValue("0.10.3")));
 		assertThat(build).satisfies(hasNativeProfile((profile) -> {
 			Dependency dependency = profile.dependencies().get("junit-platform-native");
 			assertThat(dependency).isNotNull();
@@ -156,7 +156,7 @@ class SpringNativeMavenBuildCustomizerTests {
 	void native11ProfileHasDependencyToJunitPlatformLauncher() {
 		MavenBuild build = new MavenBuild();
 		build.dependencies().add("native",
-				Dependency.withCoordinates("com.example", "native").version(VersionReference.ofValue("0.11.0-RC1")));
+				Dependency.withCoordinates("com.moodybeauty", "native").version(VersionReference.ofValue("0.11.0-RC1")));
 		assertThat(build).satisfies(hasNativeProfile((profile) -> {
 			Dependency dependency = profile.dependencies().get("junit-platform-native");
 			assertThat(dependency).isNotNull();
@@ -170,7 +170,7 @@ class SpringNativeMavenBuildCustomizerTests {
 	void native10ProfileHasPluginConfigurationForNativeMavenPluginWithBuildAndTestTasks() {
 		MavenBuild build = new MavenBuild();
 		build.dependencies().add("native",
-				Dependency.withCoordinates("com.example", "native").version(VersionReference.ofValue("0.10.3")));
+				Dependency.withCoordinates("com.moodybeauty", "native").version(VersionReference.ofValue("0.10.3")));
 		assertThat(build).satisfies(hasNativeProfile((profile) -> {
 			assertThat(profile.plugins().values()).singleElement().satisfies((plugin) -> {
 				assertThat(plugin.getGroupId()).isEqualTo("org.graalvm.buildtools");
@@ -194,7 +194,7 @@ class SpringNativeMavenBuildCustomizerTests {
 	void native11M2ProfileHasPluginConfigurationForNativeMavenPluginWithBuildTaskOnly() {
 		MavenBuild build = new MavenBuild();
 		build.dependencies().add("native",
-				Dependency.withCoordinates("com.example", "native").version(VersionReference.ofValue("0.11.0-M2")));
+				Dependency.withCoordinates("com.moodybeauty", "native").version(VersionReference.ofValue("0.11.0-M2")));
 		assertThat(build).satisfies(hasNativeProfile((profile) -> {
 			assertThat(profile.plugins().values()).singleElement().satisfies((plugin) -> {
 				assertThat(plugin.getGroupId()).isEqualTo("org.graalvm.buildtools");
@@ -214,7 +214,7 @@ class SpringNativeMavenBuildCustomizerTests {
 	void native11RC1ProfileHasPluginConfigurationForNativeMavenPluginWithBuildTaskOnly() {
 		MavenBuild build = new MavenBuild();
 		build.dependencies().add("native",
-				Dependency.withCoordinates("com.example", "native").version(VersionReference.ofValue("0.11.0-RC1")));
+				Dependency.withCoordinates("com.moodybeauty", "native").version(VersionReference.ofValue("0.11.0-RC1")));
 		assertThat(build).satisfies(hasNativeProfile((profile) -> {
 			assertThat(profile.plugins().values()).singleElement().satisfies((plugin) -> {
 				assertThat(plugin.getGroupId()).isEqualTo("org.graalvm.buildtools");

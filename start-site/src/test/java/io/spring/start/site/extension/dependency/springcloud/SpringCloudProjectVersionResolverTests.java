@@ -40,10 +40,10 @@ class SpringCloudProjectVersionResolverTests {
 
 	@Test
 	void resolveWithNoSpringCloudBom() {
-		BillOfMaterials bom = BillOfMaterials.create("com.example", "custom-bom", "1.0.0");
+		BillOfMaterials bom = BillOfMaterials.create("com.moodybeauty", "custom-bom", "1.0.0");
 		InitializrMetadata metadata = InitializrMetadataTestBuilder.withDefaults().addBom("custom-bom", bom).build();
 		String version = new SpringCloudProjectVersionResolver(metadata, this.versionResolver)
-				.resolveVersion(VersionParser.DEFAULT.parse("2.1.0.RELEASE"), "com.example:test");
+				.resolveVersion(VersionParser.DEFAULT.parse("2.1.0.RELEASE"), "com.moodybeauty:test");
 		assertThat(version).isNull();
 	}
 

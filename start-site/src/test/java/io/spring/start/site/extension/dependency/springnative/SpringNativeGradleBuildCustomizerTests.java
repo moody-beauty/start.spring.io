@@ -60,7 +60,7 @@ abstract class SpringNativeGradleBuildCustomizerTests {
 
 	protected GradleBuild createBuild(String springNativeVersion) {
 		GradleBuild build = new GradleBuild();
-		build.dependencies().add("native", Dependency.withCoordinates("com.example", "native")
+		build.dependencies().add("native", Dependency.withCoordinates("com.moodybeauty", "native")
 				.version(VersionReference.ofValue(springNativeVersion)).build());
 		return build;
 	}

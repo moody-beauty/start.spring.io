@@ -163,7 +163,7 @@ class ProjectGenerationIntegrationTests {
 		request.setLanguage(language.id());
 		request.setPackaging(packaging.id());
 		request.setType(buildSystem.id() + "-project");
-		request.setGroupId("com.example");
+		request.setGroupId("com.moodybeauty");
 		request.setArtifactId("demo");
 		request.setApplicationName("DemoApplication");
 		request.setDependencies(Arrays.asList("devtools", "configuration-processor"));

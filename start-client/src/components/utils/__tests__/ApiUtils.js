@@ -192,11 +192,11 @@ describe('parseParams', () => {
         platformVersion: get(defaultValues, 'boot'),
         packaging: 'tar',
         jvmVersion: '1',
-        groupId: 'com.example',
+        groupId: 'com.moodybeauty',
         artifactId: 'demo',
         name: 'demo',
         description: 'Demo project for Spring Boot',
-        packageName: 'com.example.demo',
+        packageName: 'com.moodybeauty.demo',
         dependencies: 'a,devtools,b,lombok',
       },
       listsValues
@@ -206,7 +206,7 @@ describe('parseParams', () => {
     expect(get(result, 'warnings.meta.packaging.value')).toBe('tar')
     expect(get(result, 'warnings.meta.java.value')).toBe('1')
 
-    expect(get(result, 'values.meta.group')).toBe('com.example')
+    expect(get(result, 'values.meta.group')).toBe('com.moodybeauty')
     expect(get(result, 'values.meta.artifact')).toBe('demo')
     expect(get(result, 'values.meta.name')).toBe('demo')
     expect(get(result, 'values.meta.description')).toBe(
@@ -277,11 +277,11 @@ describe('parseParams', () => {
         platformVersion: '1.1.1',
         packaging: 'tar',
         jvmVersion: '1',
-        groupId: 'com.example',
+        groupId: 'com.moodybeauty',
         artifactId: 'demo',
         name: 'demo',
         description: 'Demo project for Spring Boot',
-        packageName: 'com.example.demo',
+        packageName: 'com.moodybeauty.demo',
         dependencies: 'a,devtools,b,lombok',
       },
       listsValues
@@ -293,7 +293,7 @@ describe('parseParams', () => {
 
     expect(get(result, 'errors.boot.value')).toBe('1.1.1')
 
-    expect(get(result, 'values.meta.group')).toBe('com.example')
+    expect(get(result, 'values.meta.group')).toBe('com.moodybeauty')
     expect(get(result, 'values.meta.artifact')).toBe('demo')
     expect(get(result, 'values.meta.name')).toBe('demo')
     expect(get(result, 'values.meta.description')).toBe(
