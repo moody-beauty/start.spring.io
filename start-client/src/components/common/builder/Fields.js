@@ -95,7 +95,7 @@ function Fields({
             <Control text='Project Metadata'>
               <FieldInput
                 id='input-group'
-                value='com.moodybeauty'
+                value={get(values, 'meta.group')}
                 text='Group'
                 onChange={event => {
                   update({ meta: { group: event.target.value } })
@@ -103,7 +103,7 @@ function Fields({
               />
               <FieldInput
                 id='input-artifact'
-                value='demo'
+                value={get(values, 'meta.artifact')}
                 text='Artifact'
                 onChange={event => {
                   update({ meta: { artifact: event.target.value } })
@@ -111,7 +111,7 @@ function Fields({
               />
               <FieldInput
                 id='input-name'
-                value='demo'
+                value={get(values, 'meta.name')}
                 text='Name'
                 onChange={event => {
                   update({ meta: { name: event.target.value } })
@@ -127,7 +127,7 @@ function Fields({
               />
               <FieldInput
                 id='input-packageName'
-                value='com.moodybeauty.demo'
+                value={get(values, 'meta.packageName')}
                 text='Package name'
                 onChange={event => {
                   update({ meta: { packageName: event.target.value } })
