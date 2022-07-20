@@ -1418,10 +1418,10 @@
       { "id": "2.1.9.RELEASE", "name": "2.1.9" }
     ]
   },
-  "groupId": { "type": "text", "default": "com.example" },
+  "groupId": { "type": "text", "default": "com.moodybeauty" },
   "artifactId": { "type": "text", "default": "demo" },
   "version": { "type": "text", "default": "0.0.1-SNAPSHOT" },
   "name": { "type": "text", "default": "demo" },
-  "description": { "type": "text", "default": "Demo project for Spring Boot" },
-  "packageName": { "type": "text", "default": "com.example.demo" }
+  "description": { "type": "text", "default": "Demo project for Spring Boot By moodybeauty" },
+  "packageName": { "type": "text", "default": "com.moodybeauty.demo" }
 }
