@@ -48,11 +48,11 @@ initializr:
           - compatibilityRange: "[2.5.0.M1,2.6.0-M1)"
             version: 2.5.6
           - compatibilityRange: "[2.6.0.M1,2.7.0-M1)"
-            version: 2.6.7
+            version: 2.6.8
           - compatibilityRange: "[2.7.0.M1,3.0.0-M1)"
-            version: 2.7.1
+            version: 2.7.4
           - compatibilityRange: "[3.0.0-M1,3.1.0-M1)"
-            version: 3.0.0-M3
+            version: 3.0.0-M4
       solace-spring-boot:
         groupId: com.solace.spring.boot
         artifactId: solace-spring-boot-bom
@@ -100,8 +100,11 @@ initializr:
           - compatibilityRange: "[3.0.0-M2,3.0.0-M3)"
             version: 2022.0.0-M2
             repositories: spring-milestones
-          - compatibilityRange: "[3.0.0-M3,3.1.0-M1)"
+          - compatibilityRange: "[3.0.0-M3,3.0.0-M4)"
             version: 2022.0.0-M3
+            repositories: spring-milestones
+          - compatibilityRange: "[3.0.0-M4,3.1.0-M1)"
+            version: 2022.0.0-M4
             repositories: spring-milestones
       spring-cloud-azure:
         groupId: com.azure.spring
@@ -134,6 +137,8 @@ initializr:
             version: 3.3.0
           - compatibilityRange: "[2.6.0-M1,2.7.0-M1)"
             version: 3.4.0
+          - compatibilityRange: "[2.7.0-M1,3.0.0-M1)"
+            version: 3.5.0
       spring-geode:
         groupId: org.springframework.geode
         artifactId: spring-geode-bom
@@ -146,20 +151,19 @@ initializr:
           - compatibilityRange: "[2.5.0-M1,2.6.0-M1)"
             version: 1.5.14
           - compatibilityRange: "[2.6.0-M1,2.7.0-M1)"
-            version: 1.6.9
+            version: 1.6.10
           - compatibilityRange: "[2.7.0-M1,3.0.0-M1)"
-            version: 1.7.1
+            version: 1.7.2
           - compatibilityRange: "[3.0.0-M1,3.1.0-M1)"
-            version: 2.0.0-M3
-            repository: spring-milestones
+            version: 2.0.0-M4
+            repositories: spring-milestones
       spring-shell:
         groupId: org.springframework.shell
         artifactId: spring-shell-dependencies
         versionProperty: spring-shell.version
         mappings:
           - compatibilityRange: "[2.7.0,3.0.0-M1)"
-            version: 2.1.0-RC1
-            repositories: spring-milestones
+            version: 2.1.0
       testcontainers:
         groupId: org.testcontainers
         artifactId: testcontainers-bom
@@ -173,7 +177,7 @@ initializr:
           - compatibilityRange: "[2.1.0.RELEASE,2.6.0-M1)"
             version: 14.8.13
           - compatibilityRange: "[2.6.0-M1,2.8.0-M1)"
-            version: 23.1.2
+            version: 23.1.4
       wavefront:
         groupId: com.wavefront
         artifactId: wavefront-spring-boot-bom
@@ -188,7 +192,7 @@ initializr:
           - compatibilityRange: "[2.7.0-M1,3.0.0-M1)"
             version: 2.3.0
     gradle:
-      dependency-management-plugin-version: 1.0.12.RELEASE
+      dependency-management-plugin-version: 1.0.13.RELEASE
     kotlin:
       mappings:
         - compatibilityRange: "[1.5.0.RELEASE,2.0.0.M1)"
@@ -913,7 +917,7 @@ initializr:
               href: https://rsocket.io/
         - name: Apache Camel
           id: camel
-          compatibilityRange: "[2.0.0.M1,2.7.0-M1)"
+          compatibilityRange: "[2.0.0.M1,3.0.0-M1)"
           mappings:
             - compatibilityRange: "[2.3.0.M1,2.4.0-M1)"
               version: 3.5.0
@@ -923,6 +927,8 @@ initializr:
               version: 3.13.0
             - compatibilityRange: "[2.6.0.M1,2.7.0-M1)"
               version: 3.17.0
+            - compatibilityRange: "[2.7.0.M1,3.0.0-M1)"
+              version: 3.18.1
           description: Apache Camel is an open source integration framework that empowers you to quickly and easily integrate various systems consuming or producing data.
           groupId: org.apache.camel.springboot
           artifactId: camel-spring-boot-starter
@@ -1023,7 +1029,7 @@ initializr:
               description: Building a RESTful Web Service with Spring Boot Actuator
             - rel: reference
               href: https://docs.spring.io/spring-boot/docs/{bootVersion}/reference/htmlsingle/#actuator
-        - name: Codecentric's Spring Boot Admin (Client)
+        - name: codecentric's Spring Boot Admin (Client)
           id: codecentric-spring-boot-admin-client
           groupId: de.codecentric
           artifactId: spring-boot-admin-starter-client
@@ -1033,7 +1039,7 @@ initializr:
           links:
             - rel: reference
               href: https://codecentric.github.io/spring-boot-admin/current/#getting-started
-        - name: Codecentric's Spring Boot Admin (Server)
+        - name: codecentric's Spring Boot Admin (Server)
           id: codecentric-spring-boot-admin-server
           groupId: de.codecentric
           artifactId: spring-boot-admin-starter-server
@@ -1437,7 +1443,7 @@ initializr:
               href: https://docs.spring.io/spring-cloud-stream/docs/current/reference/html/spring-cloud-stream.html#spring-cloud-stream-overview-introducing
     - name: VMware Tanzu Application Service
       bom: spring-cloud-services
-      compatibilityRange: "[2.0.0.RELEASE,2.7.0-M1)"
+      compatibilityRange: "[2.0.0.RELEASE,3.0.0-M1)"
       content:
         - name: Config Client (TAS)
           id: scs-config-client
